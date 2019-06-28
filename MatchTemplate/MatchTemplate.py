@@ -1,20 +1,22 @@
 import cv2
 import numpy as np
 
+#加载原始RGB图像
 img_rgb = cv2.imread("./img/photo.jpg")
+#创建一个原始图像的灰度版本，所有操作在灰度版本中处理，然后在RGB图像中使用相同坐标还原
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 
-
+#加载将要搜索的图像模板
 template = cv2.imread('./img/template.jpg',0)
-
+#记录图像模板的尺寸
 w, h = template.shape[::-1]
 
 #查看三组图像(图像标签名称，文件名称)
 cv2.imshow('rgb',img_rgb)
 cv2.imshow('gray',img_gray)
 cv2.imshow('template',template)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
 
 
 #res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
