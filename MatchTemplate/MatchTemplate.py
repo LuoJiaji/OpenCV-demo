@@ -3,6 +3,7 @@ import numpy as np
 
 #加载原始RGB图像
 img_rgb = cv2.imread("./img/photo.jpg")
+#img_rgb = cv2.resize(img_rgb, (1000,700))
 #创建一个原始图像的灰度版本，所有操作在灰度版本中处理，然后在RGB图像中使用相同坐标还原
 img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
 
